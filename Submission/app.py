@@ -37,11 +37,11 @@ app = Flask(__name__)
 ## Setting up the base route
 @app.route("/")
 def welcome():
-    ## Create session link
-    session = Session(engine)
-
-    ## Close out session link
-    session.close()
+   f'Hello! Below are the available routes you can follow in this app: <br/>'
+   f'Precipitation data: /api/v1.0/precipitation <br/>'
+   f'Station information: /api/v1.0/stations <br/>'
+   f'Temperature Observations: /api/v1.0/tobs <br/>'
+   f'Temperature Observations with date filter: /api/v1.0/yyyy-mm-dd/yyyy-mm-dd'
 
 ## Precipitation route
 @app.route("/api/v1.0/precipitation")
@@ -49,7 +49,6 @@ def precipitation():
     ## Create session link
     session = Session(engine)
 
-    "Return a list of dates and precipitations in the data"
     results = session.query(MeasurementTable.date, MeasurementTable.prcp).all()
 
     ## Close out session link
@@ -76,7 +75,6 @@ def stations():
     ## Create session link
     session = Session(engine)
 
-    "Returns a list of all stations in the data"
     results = session.query(StationTable.station).all()
 
     ## Close out session link
@@ -111,7 +109,6 @@ def tobs():
 
     oneYearPrior = dt.date(2017,8,23) - dt.timedelta(days=365)
 
-    "Return a list of the last year of temperature data"
     results = session.query(MeasurementTable.date, MeasurementTable.tobs).filter(and_(MeasurementTable.date >= \
                 oneYearPrior, MeasurementTable.station == mostActive)).all()
 

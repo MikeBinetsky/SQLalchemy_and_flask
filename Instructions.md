@@ -2,13 +2,13 @@
 
 ### Before You Begin
 
-1. Create a new repository for this project called `sqlalchemy-challenge`. **Do not add this homework to an existing repository**.
+[DONE] 1. Create a new repository for this project called `sqlalchemy-challenge`. **Do not add this homework to an existing repository**.
 
-2. Clone the new repository to your computer.
+[DONE] 2. Clone the new repository to your computer.
 
-3. Add your Jupyter notebook and `app.py` to this folder. These will be the main scripts to run for analysis.
+[DONE] 3. Add your Jupyter notebook and `app.py` to this folder. These will be the main scripts to run for analysis.
 
-4. Push the above changes to GitHub or GitLab.
+[DONE] 4. Push the above changes to GitHub or GitLab.
 
 ![surfs-up.png](Images/surfs-up.png)
 
@@ -88,13 +88,13 @@ Now that you have completed your initial analysis, design a Flask API based on t
 
   * List all routes that are available.
 
-* `/api/v1.0/precipitation`
-
+[DONE] * `/api/v1.0/precipitation`
+  
   * Convert the query results to a dictionary using `date` as the key and `prcp` as the value.
 
   * Return the JSON representation of your dictionary.
 
-* `/api/v1.0/stations`
+[DONE] * `/api/v1.0/stations`
 
   * Return a JSON list of stations from the dataset.
 
